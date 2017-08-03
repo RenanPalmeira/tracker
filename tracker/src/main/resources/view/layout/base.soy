@@ -1,0 +1,18 @@
+{namespace com.tracker.ui.layout}
+
+/**
+ * Base layout
+ * @param content
+ */
+{template .base}
+    <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Tracker</title>
+            <link rel="stylesheet" type="text/css" href="/css/pui-components-8.3.1.css">
+        </head>
+        <body>
+            {$content|noAutoescape}
+        </body>
+    </html>
+{/template}

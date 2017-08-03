@@ -1,0 +1,24 @@
+{namespace com.tracker.ui}
+
+/**
+ * Homepage
+ * @param name name of page
+ * @param? greetingWord one phrase
+ */
+{template .dashboard}
+{call com.tracker.ui.layout.base}
+    {param content}
+        {if not $greetingWord}
+            Hello {$name}!
+        {else}
+            {$greetingWord} {$name}!
+        {/if}
+
+        <button class="btn btn-default" type="button" aria-label="Default">
+            <span class="btn-inner-content">
+                <span>Tracker</span>
+            </span> 
+        </button>
+    {/param}
+{/call}
+{/template}
