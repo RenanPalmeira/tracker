@@ -22,3 +22,17 @@
     {/param}
 {/call}
 {/template}
+
+/**
+ * Page list all transactions available
+ * @param transactions list of transactions availables
+ */
+{template .transactions}
+{call com.tracker.ui.layout.base}
+    {param content}
+        {foreach $transaction in $transactions}
+            {$transaction}
+        {/foreach}
+    {/param}
+{/call}
+{/template}
