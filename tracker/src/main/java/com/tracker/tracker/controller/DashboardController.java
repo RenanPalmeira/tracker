@@ -16,7 +16,7 @@ public class DashboardController {
     @Autowired
     private TransactionService service;
 
-    @RequestMapping(value="/")
+    @RequestMapping(value="/dashboard")
     public String dashboard(final Model model) {
         model.addAttribute("name", "tracker");
         model.addAttribute("greetingWord", "Hello");

@@ -1,0 +1,53 @@
+{namespace com.tracker.ui.layout}
+
+/**
+ * Navbar of layout
+ */
+{template .navbar}
+    <nav class="navbar navbar-inverse bg-success navbar-toggleable-md">
+        <a class="navbar-brand" href="#">Tracker</a>
+        <div class="collapse navbar-collapse">
+            {call .navitems /}
+            {call .navlevel /}
+        </div>
+    </nav>
+{/template}
+
+/**
+ * Items of navbar
+ */
+{template .navitems}
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+            <a class="nav-link" href="#">
+                <span class="octicon octicon-home"></span> <b>Home</b>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">
+                <span class="octicon octicon-graph"></span> <b>Metrics</b>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">
+                <span class="octicon octicon-paintcan"></span> <b>Account</b>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">
+                <span class="octicon octicon-gear"></span> <b>Settings</b>
+            </a>
+        </li>
+    </ul>
+{/template}
+
+/**
+ * Level of navbar
+ */
+{template .navlevel}
+    <span class="navbar-text">
+        <a href="#" data-ak-tooltip="Continue" data-ak-tooltip-position="bottom">
+            <span style="color: #fff"><b>Level</b></span> <span class="badge badge-pill badge-primary">1</span>
+        </a>
+    </span>
+{/template}

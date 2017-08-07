@@ -1,0 +1,92 @@
+{namespace com.tracker.ui}
+
+/**
+ * Homepage
+ * @param name name of page
+ * @param? greetingWord one phrase
+ */
+{template .dashboard}
+{call com.tracker.ui.layout.base}
+    {param content}
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    {call .sidebar /}
+                </div>
+                <div class="col-md-9">
+                    {if not $greetingWord}
+                        Hello {$name}!
+                    {else}
+                        {$greetingWord} {$name}!
+                    {/if}
+//                    {call .transactions /}
+                </div>
+            </div>
+        </div>
+    {/param}
+{/call}
+{/template}
+
+/**
+ * Sidebar in dashboard
+ */
+{template .sidebar}
+    <div class="ak-field-group">
+        <label for="timelines">Month</label>
+        <select class="ak-field-select" id="timelines" name="timelines">
+            <option selected>August</option>
+        </select>
+    </div>
+
+    <div class="ak-field-group">
+        <label>Categorys</label>
+
+        <div class="list-group">
+          <a href="#" class="list-group-item list-group-item-action justify-content-between">
+            Food
+            <span class="octicon octicon-squirrel"></span>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action justify-content-between">
+            Party
+            <span class="octicon octicon-pencil"></span>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action justify-content-between">
+            Car
+            <span class="octicon octicon-organization"></span>
+          </a>
+        </div>
+    </div>
+{/template}
+
+
+/**
+ * Page list all transactions saved
+ * @param? transactions list of transactions saved
+ */
+{template .transactions}
+    <div class="ak-field-group">
+        <label for="q">Search</label>
+        <input type="text" class="ak-field-text" id="q" name="q" placeholder="eg. my super day, market, new phone" autofocus>
+    </div>
+            
+    <div class="ak-field-group">
+        <label>Transactions</label>
+    </div>
+
+    {foreach $transaction in $transactions}
+        <div class="card">
+            <div class="card-block">
+                <h6 class="card-title">
+                    <span class="card-signal"></span>
+                    {$transaction}
+                </h6>
+            </div>
+        </div>
+    {ifempty}
+        <div class="card">
+            <div class="card-block">
+                ...
+            </div>
+        </div>
+    {/foreach}
+{/template}

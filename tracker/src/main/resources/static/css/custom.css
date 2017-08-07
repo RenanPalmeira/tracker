@@ -1,0 +1,22 @@
+.card {
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+.card-title {
+    margin: 0;
+}
+
+.card-signal {
+    padding: 5px;
+    border-radius: 100px;
+    display: inline-block;
+}
+.card-signal.negative,
+.card-signal.red {
+    background-color: #BF2600;
+}
+.card-signal.positive,
+.card-signal.green {
+    background-color: #57D9A3;
+}
